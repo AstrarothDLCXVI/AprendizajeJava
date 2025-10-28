@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java para Principiantes - Guía Completa</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>☕ Java para Principiantes</h1>
+            <p class="subtitle">Tu guía completa para aprender programación en Java</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#que-es">¿Qué es Java?</a></li>
+                <li><a href="#instalacion">Instalación</a></li>
+                <li><a href="#sintaxis">Sintaxis Básica</a></li>
+                <li><a href="#intermedio">Nivel Intermedio</a></li>
+                <li><a href="#poo-avanzado">POO Avanzado</a></li>
+                <li><a href="#colecciones">Colecciones</a></li>
+                <li><a href="#archivos">Archivos</a></li>
+                <li><a href="#ejemplos">Ejemplos</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="que-es" class="section">
+            <h2>¿Qué es Java?</h2>
+            <div class="card">
+                <p>Java es un lenguaje de programación orientado a objetos, creado por James Gosling en Sun Microsystems en 1995. Es uno de los lenguajes más populares y utilizados en el mundo.</p>
+                
+                <h3>Características principales:</h3>
+                <ul>
+                    <li><strong>Multiplataforma:</strong> "Write Once, Run Anywhere" (Escribe una vez, ejecuta en cualquier lugar)</li>
+                    <li><strong>Orientado a Objetos:</strong> Todo en Java es un objeto</li>
+                    <li><strong>Seguro:</strong> Tiene múltiples capas de seguridad</li>
+                    <li><strong>Robusto:</strong> Manejo automático de memoria y excepciones</li>
+                    <li><strong>Popular:</strong> Usado en aplicaciones Android, empresariales, web y más</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>¿Dónde se usa Java?</h4>
+                    <ul>
+                        <li>Aplicaciones Android</li>
+                        <li>Sistemas empresariales (banca, seguros)</li>
+                        <li>Aplicaciones web</li>
+                        <li>Servidores y aplicaciones de backend</li>
+                        <li>Big Data y ciencia de datos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="instalacion" class="section">
+            <h2>Instalación y Configuración</h2>
+            <div class="card">
+                <h3>Paso 1: Instalar Java JDK</h3>
+                <p>Necesitas instalar el Java Development Kit (JDK):</p>
+                <ol>
+                    <li>Ve a <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank">oracle.com/java</a></li>
+                    <li>Descarga la versión más reciente del JDK para tu sistema operativo</li>
+                    <li>Ejecuta el instalador y sigue las instrucciones</li>
+                </ol>
+
+                <h3>Paso 2: Configurar Variables de Entorno</h3>
+                <p><strong>Windows:</strong></p>
+                <ul>
+                    <li>Busca "Variables de entorno" en el menú de inicio</li>
+                    <li>Agrega JAVA_HOME apuntando a la carpeta de instalación del JDK</li>
+                    <li>Agrega %JAVA_HOME%\bin al PATH</li>
+                </ul>
+
+                <h3>Paso 3: Verificar Instalación</h3>
+                <p>Abre una terminal o CMD y escribe:</p>
+                <div class="code-block">
+                    <code>java -version</code>
+                </div>
+
+                <h3>IDE Recomendados</h3>
+                <ul>
+                    <li><strong>IntelliJ IDEA:</strong> El más popular y completo</li>
+                    <li><strong>Eclipse:</strong> Gratuito y ampliamente usado</li>
+                    <li><strong>VS Code:</strong> Ligero con extensión de Java</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="sintaxis" class="section">
+            <h2>Sintaxis Básica de Java</h2>
+            
+            <div class="card">
+                <h3>1. Estructura de un Programa Java</h3>
+                <div class="code-block">
+                    <code>public class MiPrimerPrograma {
+    public static void main(String[] args) {
+        System.out.println("¡Hola Mundo!");
+    }
+}</code>
+                </div>
+                <p><strong>Explicación:</strong></p>
+                <ul>
+                    <li><code>public class</code>: Define una clase pública</li>
+                    <li><code>main</code>: Punto de entrada del programa</li>
+                    <li><code>System.out.println()</code>: Imprime en consola</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>2. Variables y Tipos de Datos</h3>
+                <div class="code-block">
+                    <code>// Tipos primitivos
+int edad = 25;              // Número entero
+double precio = 19.99;      // Número decimal
+boolean esEstudiante = true; // Verdadero/Falso
+char inicial = 'A';         // Un solo carácter
+String nombre = "Juan";     // Cadena de texto
+
+// Constantes
+final double PI = 3.14159;</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>3. Operadores</h3>
+                <div class="code-block">
+                    <code>// Aritméticos: +, -, *, /, %
+int suma = 10 + 5;
+int resto = 10 % 3;
+
+// Comparación: ==, !=, >, <, >=, <=
+boolean esMayor = 10 > 5;
+
+// Lógicos: &&, ||, !
+boolean resultado = (edad > 18) && (edad < 65);</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>4. Estructuras de Control</h3>
+                <h4>If-Else</h4>
+                <div class="code-block">
+                    <code>if (edad >= 18) {
+    System.out.println("Eres mayor de edad");
+} else if (edad >= 13) {
+    System.out.println("Eres adolescente");
+} else {
+    System.out.println("Eres un niño");
+}</code>
+                </div>
+
+                <h4>Switch</h4>
+                <div class="code-block">
+                    <code>switch (dia) {
+    case 1:
+        System.out.println("Lunes");
+        break;
+    case 2:
+        System.out.println("Martes");
+        break;
+    default:
+        System.out.println("Otro día");
+}</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>5. Bucles</h3>
+                <h4>For</h4>
+                <div class="code-block">
+                    <code>for (int i = 0; i < 5; i++) {
+    System.out.println("Número: " + i);
+}</code>
+                </div>
+
+                <h4>While</h4>
+                <div class="code-block">
+                    <code>int contador = 0;
+while (contador < 5) {
+    System.out.println(contador);
+    contador++;
+}</code>
+                </div>
+
+                <h4>Do-While</h4>
+                <div class="code-block">
+                    <code>int numero = 0;
+do {
+    System.out.println(numero);
+    numero++;
+} while (numero < 5);</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>6. Arrays (Arreglos)</h3>
+                <div class="code-block">
+                    <code>// Declaración e inicialización
+int[] numeros = {1, 2, 3, 4, 5};
+String[] nombres = new String[3];
+
+// Acceso a elementos
+int primero = numeros[0];
+numeros[1] = 10;
+
+// Recorrer un array
+for (int num : numeros) {
+    System.out.println(num);
+}</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>7. Métodos</h3>
+                <div class="code-block">
+                    <code>public class Calculadora {
+    // Método que suma dos números
+    public static int sumar(int a, int b) {
+        return a + b;
+    }
+    
+    // Método sin retorno
+    public static void saludar(String nombre) {
+        System.out.println("Hola, " + nombre);
+    }
+    
+    public static void main(String[] args) {
+        int resultado = sumar(5, 3);
+        saludar("María");
+    }
+}</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>8. Clases y Objetos (POO)</h3>
+                <div class="code-block">
+                    <code>// Definir una clase
+public class Persona {
+    // Atributos
+    private String nombre;
+    private int edad;
+    
+    // Constructor
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    
+    // Métodos getter y setter
+    public String getNombre() {
+        return nombre;
+    }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    // Método
+    public void presentarse() {
+        System.out.println("Hola, soy " + nombre);
+    }
+}
+
+// Usar la clase
+Persona persona1 = new Persona("Carlos", 30);
+persona1.presentarse();</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN: NIVEL INTERMEDIO -->
+        <section id="intermedio" class="section">
+            <h2>🚀 Nivel Intermedio</h2>
+            
+            <div class="card">
+                <h3>1. Manejo de Excepciones</h3>
+                <p>Las excepciones permiten manejar errores de manera controlada sin que el programa se detenga abruptamente.</p>
+                
+                <h4>Try-Catch-Finally</h4>
+                <div class="code-block">
+                    <code>public class ManejoExcepciones {
+    public static void main(String[] args) {
+        try {
+            int resultado = 10 / 0; // Esto lanza una excepción
+            System.out.println(resultado);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: No se puede dividir por cero");
+            System.out.println("Mensaje: " + e.getMessage());
+        } finally {
+            System.out.println("Este bloque siempre se ejecuta");
+        }
+    }
+}</code>
+                </div>
+
+                <h4>Lanzar Excepciones Personalizadas</h4>
+                <div class="code-block">
+                    <code>public class ValidadorEdad {
+    public static void verificarEdad(int edad) throws Exception {
+        if (edad < 18) {
+            throw new Exception("Debes ser mayor de 18 años");
+        }
+        System.out.println("Edad válida");
+    }
+    
+    public static void main(String[] args) {
+        try {
+            verificarEdad(15);
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}</code>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Tipos de Excepciones Comunes</h4>
+                    <ul>
+                        <li><strong>NullPointerException:</strong> Intentar usar un objeto null</li>
+                        <li><strong>ArrayIndexOutOfBoundsException:</strong> Acceder a un índice inválido</li>
+                        <li><strong>NumberFormatException:</strong> Error al convertir String a número</li>
+                        <li><strong>IOException:</strong> Errores de entrada/salida</li>
+                        <li><strong>FileNotFoundException:</strong> Archivo no encontrado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>2. Modificadores de Acceso</h3>
+                <p>Controlan la visibilidad de clases, métodos y atributos.</p>
+                
+                <div class="code-block">
+                    <code>public class ModificadoresAcceso {
+    // PUBLIC: Accesible desde cualquier lugar
+    public String publico = "Visible para todos";
+    
+    // PRIVATE: Solo accesible dentro de la misma clase
+    private String privado = "Solo dentro de esta clase";
+    
+    // PROTECTED: Accesible en la misma clase, paquete y subclases
+    protected String protegido = "Visible en herencia";
+    
+    // DEFAULT (sin modificador): Solo en el mismo paquete
+    String porDefecto = "Solo en este paquete";
+    
+    // Métodos de acceso (Getters y Setters)
+    public String getPrivado() {
+        return privado;
+    }
+    
+    public void setPrivado(String valor) {
+        this.privado = valor;
+    }
+}</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>3. Métodos Estáticos vs Métodos de Instancia</h3>
+                
+                <div class="code-block">
+                    <code>public class EjemploMetodos {
+    // Variable de instancia
+    private String nombre;
+    
+    // Variable estática (compartida por todas las instancias)
+    private static int contador = 0;
+    
+    // Constructor
+    public EjemploMetodos(String nombre) {
+        this.nombre = nombre;
+        contador++; // Incrementa cada vez que se crea un objeto
+    }
+    
+    // Método de instancia (necesita un objeto)
+    public void saludar() {
+        System.out.println("Hola, soy " + nombre);
+    }
+    
+    // Método estático (se llama con la clase, no con objetos)
+    public static int getContador() {
+        return contador;
+    }
+    
+    public static void main(String[] args) {
+        EjemploMetodos obj1 = new EjemploMetodos("Ana");
+        EjemploMetodos obj2 = new EjemploMetodos("Luis");
+        
+        obj1.saludar(); // Método de instancia
+        System.out.println("Total objetos: " + EjemploMetodos.getContador());
+    }
+}</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>4. Sobrecarga de Métodos (Method Overloading)</h3>
+                <p>Permite tener múltiples métodos con el mismo nombre pero diferentes parámetros.</p>
+                
+                <div class="code-block">
+                    <code>public class Calculadora {
+    // Suma de dos enteros
+    public int sumar(int a, int b) {
+        return a + b;
+    }
+    
+    // Suma de tres enteros
+    public int sumar(int a, int b, int c) {
+        return a + b + c;
+    }
+    
+    // Suma de dos doubles
+    public double sumar(double a, double b) {
+        return a + b;
+    }
+    
+    // Suma de array de enteros
+    public int sumar(int[] numeros) {
+        int suma = 0;
+        for (int num : numeros) {
+            suma += num;
+        }
+        return suma;
+    }
+    
+    public static void main(String[] args) {
+        Calculadora calc = new Calculadora();
+        System.out.println(calc.sumar(5, 3));           // 8
+        System.out.println(calc.sumar(5, 3, 2));        // 10
+        System.out.println(calc.sumar(5.5, 3.2));       // 8.7
+        System.out.println(calc.sumar(new int[]{1,2,3})); // 6
+    }
+}</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>5. Constructores y Sobrecarga</h3>
+                
+                <div class="code-block">
+                    <code>public class Producto {
+    private String nombre;
+    private double precio;
+    private int cantidad;
+    
+    // Constructor por defecto
+    public Producto() {
+        this.nombre = "Sin nombre";
+        this.precio = 0.0;
+        this.cantidad = 0;
+    }
+    
+    // Constructor con nombre y precio
+    public Producto(String nombre, double precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.cantidad = 1;
+    }
+    
+    // Constructor completo
+    public Producto(String nombre, double precio, int cantidad) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.cantidad = cantidad;
+    }
+    
+    // Constructor copia
+    public Producto(Producto otro) {
+        this.nombre = otro.nombre;
+        this.precio = otro.precio;
+        this.cantidad = otro.cantidad;
+    }
+    
+    public void mostrarInfo() {
+        System.out.println("Producto: " + nombre);
+        System.out.println("Precio: $" + precio);
+        System.out.println("Cantidad: " + cantidad);
+    }
+    
+    public static void main(String[] args) {
+        Producto p1 = new Producto();
+        Producto p2 = new Producto("Laptop", 999.99);
+        Producto p3 = new Producto("Mouse", 25.50, 5);
+        Producto p4 = new Producto(p3); // Copia
+        
+        p2.mostrarInfo();
+    }
+}</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>6. La Palabra Clave "this"</h3>
+                <p>Se usa para referenciar al objeto actual dentro de la clase.</p>
+                
+                <div class="code-block">
+                    <code>public class Empleado {
+    private String nombre;
+    private double salario;
+    
+    public Empleado(String nombre, double salario) {
+        // "this" diferencia el atributo del parámetro
+        this.nombre = nombre;
+        this.salario = salario;
+    }
+    
+    public void setSalario(double salario) {
+        if (salario > 0) {
+            this.salario = salario;
+        }
+    }
+    
+    // "this" para llamar a otro método de la misma clase
+    public void aumentarSalario(double porcentaje) {
+        double aumento = this.salario * (porcentaje / 100);
+        this.setSalario(this.salario + aumento);
+    }
+    
+    // "this" para retornar el objeto actual (method chaining)
+    public Empleado setNombre(String nombre) {
+        this.nombre = nombre;
+        return this; // Retorna el objeto actual
+    }
+    
+    public static void main(String[] args) {
+        Empleado emp = new Empleado("Carlos", 3000);
+        emp.aumentarSalario(10); // Aumenta 10%
+        
+        // Method chaining
+        emp.setNombre("Carlos García");
+    }
+}</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>7. Enumeraciones (Enum)</h3>
+                <p>Tipo especial de clase que representa un grupo de constantes.</p>
+                
+                <div class="code-block">
+                    <code>// Enum básico
+enum DiaSemana {
+    LUNES, MARTES, MIERCOLES, JUEVES, VIERNES, SABADO, DOMINGO
+}
+
+// Enum con atributos y métodos
+enum NivelDificultad {
+    FACIL("Fácil", 1),
+    MEDIO("Medio", 2),
+    DIFICIL("Difícil", 3),
+    EXPERTO("Experto", 4);
+    
+    private String nombre;
+    private int valor;
+    
+    NivelDificultad(String nombre, int valor) {
+        this.nombre = nombre;
+        this.valor = valor;
+    }
+    
+    public String getNombre() {
+        return nombre;
+    }
+    
+    public int getValor() {
+        return valor;
+    }
+}
+
+public class EjemploEnum {
+    public static void main(String[] args) {
+        // Uso básico
+        DiaSemana dia = DiaSemana.LUNES;
+        System.out.println("Hoy es: " + dia);
+        
+        // Switch con enum
+        switch(dia) {
+            case LUNES:
+                System.out.println("Inicio de semana");
+                break;
+            case VIERNES:
+                System.out.println("Casi fin de semana");
+                break;
+            default:
+                System.out.println("Día regular");
+        }
+        
+        // Enum con atributos
+        NivelDificultad nivel = NivelDificultad.MEDIO;
+        System.out.println("Nivel: " + nivel.getNombre());
+        System.out.println("Valor: " + nivel.getValor());
+        
+        // Iterar sobre valores
+        for (DiaSemana d : DiaSemana.values()) {
+            System.out.println(d);
+        }
+    }
+}</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN: POO AVANZADO -->
+        <section id="poo-avanzado" class="section">
+            <h2>🎯 Programación Orientada a Objetos Avanzada</h2>
+            
+            <div class="card">
+                <h3>1. Herencia</h3>
+                <p>Permite crear nuevas clases basadas en clases existentes, heredando sus atributos y métodos.</p>
+                
+                <div class="code-block">
+                    <code>// Clase padre (superclase)
+class Animal {
+    protected String nombre;
+    protected int edad;
+    
+    public Animal(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    
+    public void comer() {
+        System.out.println(nombre + " está comiendo");
+    }
+    
+    public void dormir() {
+        System.out.println(nombre + " está durmiendo");
+    }
+}
+
+// Clase hija (subclase)
+class Perro extends Animal {
+    private String raza;
+    
+    public Perro(String nombre, int edad, String raza) {
+        super(nombre, edad); // Llama al constructor del padre
+        this.raza = raza;
+    }
+    
+    // Método propio de Perro
+    public void ladrar() {
+        System.out.println(nombre + " está ladrando: ¡Guau!");
+    }
+    
+    // Sobrescribir método del padre
+    @Override
+    public void comer() {
+        System.out.println(nombre + " come croquetas");
+    }
+}
+
+class Gato extends Animal {
+    private boolean esCallejero;
+    
+    public Gato(String nombre, int edad, boolean esCallejero) {
+        super(nombre, edad);
+        this.esCallejero = esCallejero;
+    }
+    
+    public void maullar() {
+        System.out.println(nombre + " dice: ¡Miau!");
+    }
+    
+    @Override
+    public void comer() {
+        System.out.println(nombre + " come pescado");
+    }
+}
+
+public class EjemploHerencia {
+    public static void main(String[] args) {
+        Perro perro = new Perro("Max", 3, "Labrador");
+        Gato gato = new Gato("Luna", 2, false);
+        
+        perro.comer();   // Método sobrescrito
+        perro.dormir();  // Método heredado
+        perro.ladrar();  // Método propio
+        
+        gato.comer();
+        gato.maullar();
+    }
+}</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>2. Polimorfismo</h3>
+                <p>Permite que objetos de diferentes clases sean tratados como objetos de una clase común.</p>
+                
+                <div class="code-block">
+                    <code>class Figura {
+    protected String color;
+    
+    public Figura(String color) {
+        this.color = color;
+    }
+    
+    public double calcularArea() {
+        return 0;
+    }
+    
+    public void dibujar() {
+        System.out.println("Dibujando una figura de color " + color);
+    }
+}
+
+class Circulo extends Figura {
+    private double radio;
+    
+    public Circulo(String color, double radio) {
+        super(color);
+        this.radio = radio;
+    }
+    
+    @Override
+    public double calcularArea() {
+        return Math.PI * radio * radio;
+    }
+    
+    @Override
+    public void dibujar() {
+        System.out.println("Dibujando un círculo " + color);
+    }
+}
+
+class Rectangulo extends Figura {
+    private double base;
+    private double altura;
+    
+    public Rectangulo(String color, double base, double altura) {
+        super(color);
+        this.base = base;
+        this.altura = altura;
+    }
+    
+    @Override
+    public double calcularArea() {
+        return base * altura;
+    }
+    
+    @Override
+    public void dibujar() {
+        System.out.println("Dibujando un rectángulo " + color);
+    }
+}
+
+public class EjemploPolimorfismo {
+    public static void main(String[] args) {
+        // Polimorfismo: referencias de tipo padre a objetos hijos
+        Figura[] figuras = new Figura[3];
+        figuras[0] = new Circulo("Rojo", 5);
+        figuras[1] = new Rectangulo("Azul", 4, 6);
+        figuras[2] = new Circulo("Verde", 3);
+        
+        // Mismo método, diferente comportamiento
+        for (Figura figura : figuras) {
+            figura.dibujar();
+            System.out.println("Área: " + figura.calcularArea());
+            System.out.println("---");
+        }
+    }
+}</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>3. Clases Abstractas</h3>
+                <p>Clases que no se pueden instanciar y sirven como base para otras clases.</p>
+                
+                <div class="code-block">
+                    <code>// Clase abstracta
+abstract class Vehiculo {
+    protected String marca;
+    protected String modelo;
+    
+    public Vehiculo(String marca, String modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+    
+    // Método abstracto (sin implementación)
+    public abstract void acelerar();
+    
+    // Método concreto
+    public void mostrarInfo() {
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+    }
+}
+
+class Coche extends Vehiculo {
+    private int numPuertas;
+    
+    public Coche(String marca, String modelo, int numPuertas) {
+        super(marca, modelo);
+        this.numPuertas = numPuertas;
+    }
+    
+    @Override
+    public void acelerar() {
+        System.out.println("El coche acelera suavemente");
+    }
+}
+
+class Moto extends Vehiculo {
+    private boolean tieneSidecar;
+    
+    public Moto(String marca, String modelo, boolean tieneSidecar) {
+        super(marca, modelo);
+        this.tieneSidecar = tieneSidecar;
+    }
+    
+    @Override
+    public void acelerar() {
+        System.out.println("La moto acelera rápidamente");
+    }
+}
+
+public class EjemploAbstracto {
+    public static void main(String[] args) {
+        // No se puede: Vehiculo v = new Vehiculo("X", "Y");
+        
+        Vehiculo coche = new Coche("Toyota", "Corolla", 4);
+        Vehiculo moto = new Moto("Yamaha", "R1", false);
+        
+        coche.mostrarInfo();
+        coche.acelerar();
+        
+        moto.mostrarInfo();
+        moto.acelerar();
+    }
+}</code>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>4. Interfaces</h3>
+                <p>Contratos que definen qué métodos debe implementar una clase, pero no cómo.</p>
+                
+                <div class="code-block">
+                    <code>// Interfaz
+interface Volador {
+    void volar();
+    void aterrizar();
+}
+
+interface Nadador {
+    void nadar();
+}
+
+// Una clase puede implementar múltiples interfaces
+class Pato implements Volador, Nadador {
+    private String nombre;
+    
+    public Pato(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    @Override
+    public void volar() {
+        System.out.println(nombre + " está volando");
+    }
+    
+    @Override
+    public void aterrizar() {
+        System.out.println(nombre + " está aterrizando");
+    }
+    
+    @Override
+    public void nadar() {
+        System.out.println(nombre + " está nadando");
+    }
+}
+
+class Avion implements Volador {
+    private String modelo;
+    
+    public Avion(String modelo) {
+        this.modelo = modelo;
+    }
+    
+    @Override
+    public void volar() {
+        System.out.println("El avión " + modelo + " está volando");
+    }
+    
+    @Override
+    public void aterrizar() {
+        System.out.println("El avión " + modelo + " está aterrizando");
+    }
+}
+
+public class EjemploInterfaces {
+    public static void main(String[] args) {
+        Pato pato = new Pato("Donald");
+        pato.volar();
+        pato.nadar();
+        pato.aterrizar();
+        
+        Avion avion = new Avion("Boeing 747");
+        avion.volar();
+        avion.aterrizar();
+    }
+}
+                    </code>
+                </div>
+            </div>
+        </section>
+
+        <section id="ejemplos" class="section">
+            <h2>Ejemplos Prácticos</h2>
+            
+            <div class="card">
+                <h3>Calculadora Simple</h3>
+                <button class="btn" onclick="mostrarEjemplo('calculadora')">Ver Código</button>
+                <div id="calculadora" class="ejemplo-code" style="display:none;">
+                    <div class="code-block">
+                        <code>import java.util.Scanner;
+
+public class Calculadora {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("=== CALCULADORA ===");
+        System.out.print("Ingresa el primer número: ");
+        double num1 = scanner.nextDouble();
+        
+        System.out.print("Ingresa el segundo número: ");
+        double num2 = scanner.nextDouble();
+        
+        System.out.print("Operación (+, -, *, /): ");
+        char operacion = scanner.next().charAt(0);
+        
+        double resultado = 0;
+        
+        switch(operacion) {
+            case '+':
+                resultado = num1 + num2;
+                break;
+            case '-':
+                resultado = num1 - num2;
+                break;
+            case '*':
+                resultado = num1 * num2;
+                break;
+            case '/':
+                if(num2 != 0) {
+                    resultado = num1 / num2;
+                } else {
+                    System.out.println("Error: División por cero");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Operación no válida");
+                return;
+        }
+        
+        System.out.println("Resultado: " + resultado);
+        scanner.close();
+    }
+}</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Sistema de Estudiantes</h3>
+                <button class="btn" onclick="mostrarEjemplo('estudiantes')">Ver Código</button>
+                <div id="estudiantes" class="ejemplo-code" style="display:none;">
+                    <div class="code-block">
+                        <code>public class Estudiante {
+    private String nombre;
+    private int edad;
+    private double[] notas;
+    
+    public Estudiante(String nombre, int edad, double[] notas) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.notas = notas;
+    }
+    
+    public double calcularPromedio() {
+        double suma = 0;
+        for(double nota : notas) {
+            suma += nota;
+        }
+        return suma / notas.length;
+    }
+    
+    public String getEstado() {
+        double promedio = calcularPromedio();
+        if(promedio >= 6.0) {
+            return "APROBADO";
+        } else {
+            return "REPROBADO";
+        }
+    }
+    
+    public void mostrarInfo() {
+        System.out.println("=== INFORMACIÓN DEL ESTUDIANTE ===");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + edad);
+        System.out.println("Promedio: " + calcularPromedio());
+        System.out.println("Estado: " + getEstado());
+    }
+    
+    public static void main(String[] args) {
+        double[] notas = {7.5, 8.0, 6.5, 9.0};
+        Estudiante estudiante = new Estudiante("Ana García", 20, notas);
+        estudiante.mostrarInfo();
+    }
+}</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Número Primo</h3>
+                <button class="btn" onclick="mostrarEjemplo('primo')">Ver Código</button>
+                <div id="primo" class="ejemplo-code" style="display:none;">
+                    <div class="code-block">
+                        <code>public class NumerosPrimos {
+    
+    public static boolean esPrimo(int numero) {
+        if(numero <= 1) {
+            return false;
+        }
+        
+        for(int i = 2; i <= Math.sqrt(numero); i++) {
+            if(numero % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("Números primos del 1 al 50:");
+        
+        for(int i = 1; i <= 50; i++) {
+            if(esPrimo(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recursos" class="section">
+            <h2>Recursos para Seguir Aprendiendo</h2>
+            
+            <div class="card">
+                <h3>📚 Documentación Oficial</h3>
+                <ul>
+                    <li><a href="https://docs.oracle.com/en/java/" target="_blank">Oracle Java Documentation</a></li>
+                    <li><a href="https://docs.oracle.com/javase/tutorial/" target="_blank">Java Tutorials</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🎓 Plataformas de Aprendizaje</h3>
+                <ul>
+                    <li>Codecademy - Curso de Java</li>
+                    <li>Coursera - Java Programming</li>
+                    <li>Udemy - Java desde cero</li>
+                    <li>freeCodeCamp - Tutoriales gratuitos</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>💡 Consejos para Principiantes</h3>
+                <ul>
+                    <li><strong>Practica diariamente:</strong> La programación se aprende haciendo</li>
+                    <li><strong>Lee código de otros:</strong> Aprende de proyectos open source</li>
+                    <li><strong>Construye proyectos:</strong> Empieza con proyectos pequeños y aumenta la complejidad</li>
+                    <li><strong>Participa en comunidades:</strong> Stack Overflow, Reddit, foros de Java</li>
+                    <li><strong>No te rindas:</strong> Todos los programadores empezaron como principiantes</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Java para Principiantes - Guía Educativa</p>
+            <p>Hecho con ☕ y dedicación</p>
+        </div>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
